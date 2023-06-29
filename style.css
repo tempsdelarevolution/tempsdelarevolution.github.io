@@ -156,21 +156,29 @@ html {
     padding: 0px 110px;
   }
 
-  .hov-block {
+  .hov-block p:hover {
+    background: rgba(34, 22, 22, 0.7) !important;
+    color: #221616;
+  }
+
+  .hov-block p {
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 100%;
-    border: 7px solid #221616;
+    border: 7px solid transparent;
     z-index: 4;
     border-radius: 50%;
     margin: -27px;
-    background-color: #221616;
-    opacity: 0%;
-  }
+   
+    
+    font-size: 30px;
+    font-weight: 700;
+    color: transparent;
 
-  .hov-block:hover {
-    opacity: 70% !important;
+    display: flex;
+    align-items:center ;
+    justify-content: center;
   }
 
 /*#region paris clock*/
@@ -533,3 +541,6 @@ html {
 
 /*#endregion*/
 
+.date-eng {
+  font-style: italic;
+}
