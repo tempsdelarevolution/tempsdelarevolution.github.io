@@ -92,8 +92,8 @@ function setRealDate() {
         currWeekday = 'Sunday';
         currWeekdayFR = "Dimanche";
     }
-    weekdayENG.innerHTML = currWeekday + ',';
-    weekdayFR.innerHTML = currWeekdayFR + ','
+    weekdayENG.innerHTML = currWeekday + ', ';
+    weekdayFR.innerHTML = currWeekdayFR + ', '
 
     //day of month
     let currDayNumber = now.getUTCDate();
@@ -102,8 +102,8 @@ function setRealDate() {
 
     if(hour<2) {currDayNumber ++}; //timezone danger zone
 
-    dayENG.innerHTML = ' ' + currDayNumber;
-    dayFR.innerHTML = ' ' + currDayNumber;
+    dayENG.innerHTML = currDayNumber;
+    dayFR.innerHTML = currDayNumber;
 
 
     //month
@@ -164,7 +164,7 @@ function setRealDate() {
         currMonthNameFR = "Decembre";
     }
 
-    monthENG.innerHTML = ' ' + currMonthName;
+    monthENG.innerHTML = currMonthName + ' ';
     monthFR.innerHTML = ' ' + currMonthNameFR;
     
 
@@ -455,52 +455,52 @@ function setRealDate() {
         let revWeekdayNumber = revDayNumber%10;
         if(revWeekdayNumber == 1) 
         {
-            revWeekdayENG = 'First Day'
+            revWeekdayENG = 'First Weekday'
             revWeekdayFR = 'Primidi'
         }
         else if (revWeekdayNumber == 2) 
         {
-            revWeekdayENG = 'Second Day'
+            revWeekdayENG = 'Second Weekday'
             revWeekdayFR = 'Duodi'
         }
         else if (revWeekdayNumber == 3) 
         {
-            revWeekdayENG = 'Third Day'
+            revWeekdayENG = 'Third Weekday'
             revWeekdayFR = 'Tridi'
         }
         else if (revWeekdayNumber == 4) 
         {
-            revWeekdayENG = 'Fourth Day'
+            revWeekdayENG = 'Fourth Weekday'
             revWeekdayFR = 'Quartidi'
         }
         else if (revWeekdayNumber == 5) 
         {
-            revWeekdayENG = 'Fifth Day'
+            revWeekdayENG = 'Fifth Weekday'
             revWeekdayFR = 'Quintidi'
         }
         else if (revWeekdayNumber == 6) 
         {
-            revWeekdayENG = 'Sixth Day'
+            revWeekdayENG = 'Sixth Weekday'
             revWeekdayFR = 'Sextidi'
         }
         else if (revWeekdayNumber == 7) 
         {
-            revWeekdayENG = 'Seventh Day'
+            revWeekdayENG = 'Seventh Weekday'
             revWeekdayFR = 'Octidi'
         }
         else if (revWeekdayNumber == 8) 
         {
-            revWeekdayENG = 'Eighth Day'
+            revWeekdayENG = 'Eighth Weekday'
             revWeekdayFR = 'Nonidi'
         }
         else if (revWeekdayNumber == 9) 
         {
-            revWeekdayENG = 'Ninth Day'
+            revWeekdayENG = 'Ninth Weekday'
             revWeekdayFR = 'Duodi'
         }
         else 
         {
-            revWeekdayENG = 'Tenth Day'
+            revWeekdayENG = 'Tenth Weekday'
             revWeekdayFR = 'Decadi'
         }
     }
@@ -519,7 +519,7 @@ function setRealDate() {
     revWeekdayElementFR.innerHTML = revWeekdayFR + ', ';
     revWeekdayElementENG.innerHTML = revWeekdayENG + ', ';
     revDayElementFR.innerHTML = revDayNumberINMONTH + ' ';
-    revDayElementENG.innerHTML = revDayNumberINMONTH + ' ';
+    revDayElementENG.innerHTML = ' ' + revDayNumberINMONTH;
     revMonthElementFR.innerHTML = revMonthFR;
     revMonthElementENG.innerHTML = revMonthENG;
 
