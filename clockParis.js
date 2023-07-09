@@ -7,6 +7,15 @@ const minsHand2 = document.querySelector('.min-hand-2');
 const hourHand2 = document.querySelector('.hour-hand-2');
     
 function setRealTime() {
+    /*
+        *Called on page load then every 1000 milliseconds*
+
+        Gets exact date and time
+        Updates analog clock hands by specific number of degrees
+        Updates digital display
+        Calls change label function to update DATE 
+    */
+
     //WHAT TIME IS IT????
     const now = new Date();
     //get seconds
@@ -57,6 +66,15 @@ function setRealTime() {
 }
 
 function setRevTime() {
+    /*
+        *Called on page load then every 864 milliseconds*
+
+        Gets exact date and time
+        Updates analog clock hands by specific number of degrees
+        Updates digital display
+    */
+
+
     //WHAT TIME IS IT????
     const now = new Date();
 
@@ -119,12 +137,13 @@ function setRevTime() {
 function changeRealTimeLabels(now, hour) {
     /*
         CHANGE LABELS: Called every second from real time clock
-        ***Note: potential optimization -- only called @ beginning of each day?
+        ***Note: potential optimization -- called on page load THEN only called @ beginning of each day?
 
         Will set the month, day, and weekday in french and english for REAL TIME clock
+
         ***IF between September x and 23rd (festival week), 
             call special label function
-        ELSE call regular revolutionary time
+        ELSE call regular revolutionary time label function
     */
 
 
@@ -312,12 +331,12 @@ function changeRealTimeLabels(now, hour) {
 
     //if festival time!
     if (isLeapYear == true && currMonthNumber == 8 && currDayNumber < 23 && currDayNumber > 16) {
-
+        specialLabel(currDayNumber, currMonthNumber, currYear, isLeapYear);
     }
-    else if (isLeapYear == true && currMonthNumber == 8 && currDayNumber < 23 && currDayNumber > 17) {
-
+    else if (isLeapYear == false && currMonthNumber == 8 && currDayNumber < 23 && currDayNumber > 17) {
+        specialLabel(currDayNumber, currMonthNumber, currYear, isLeapYear);
     }
-    else {
+    else { //not festival week, regular day of year
         changeRevolutionLabels(currDayNumber, currMonthNumber, currYear, isLeapYear);
     }
 
@@ -665,6 +684,10 @@ function changeRevolutionLabels(currDayNumber, currMonthNumber, currYear, isLeap
     revDayElementENG.innerHTML = ' ' + revDayNumberINMONTH + 'th Day';
     revMonthElementFR.innerHTML = revMonthFR;
     revMonthElementENG.innerHTML = revMonthENG + ',';
+}
+
+function specialLabel(currDayNumber, currMonthNumber, currYear, isLeapYear) {
+
 }
 
 setInterval(setRealTime, 1000);
