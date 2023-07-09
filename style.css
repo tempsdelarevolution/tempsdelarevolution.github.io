@@ -55,7 +55,7 @@ html {
 }
 
 .txt-spec {
-  font-family: "Great Vibes", sans-serif;
+  font-family: "Great Vibes", sans-serif !important;
 }
 
 /*borders*/
@@ -144,7 +144,6 @@ html {
   /*#endregion*/
 
   .both-clocks {
-    
     margin: auto;
     width: 800px;
     display: flex;
@@ -171,7 +170,6 @@ html {
     border-radius: 50%;
     margin: -27px;
    
-    
     font-size: 30px;
     font-weight: 700;
     color: transparent;
@@ -543,4 +541,5 @@ html {
 
 .date-eng {
   font-style: italic;
+  font-size: 20px;
 }
