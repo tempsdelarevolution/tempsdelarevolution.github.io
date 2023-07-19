@@ -667,7 +667,8 @@ function changeRevolutionLabels(currDayNumber, currMonthNumber, currYear, isLeap
     }
     
 
-    revDayNumberINMONTH = revDayNumber%30; //very convenient system to be fair
+    revDayNumberINMONTH = revDayNumber%30;
+    if(revDayNumberINMONTH == 0) {revDayNumberINMONTH = 30;} //very convenient system to be fair
 
     //HTML elements
     let revWeekdayElementFR = document.getElementById("weekday-past-fr");
@@ -681,7 +682,7 @@ function changeRevolutionLabels(currDayNumber, currMonthNumber, currYear, isLeap
     revWeekdayElementFR.innerHTML = revWeekdayFR + ', ';
     revWeekdayElementENG.innerHTML = revWeekdayENG + ', ';
     revDayElementFR.innerHTML = revDayNumberINMONTH + ' ';
-    revDayElementENG.innerHTML = ' ' + revDayNumberINMONTH + 'th Day';
+    revDayElementENG.innerHTML = ' Day ' + revDayNumberINMONTH;
     revMonthElementFR.innerHTML = revMonthFR;
     revMonthElementENG.innerHTML = revMonthENG + ',';
 }
