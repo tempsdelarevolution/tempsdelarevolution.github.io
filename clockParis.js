@@ -5,7 +5,10 @@ const hourHand1 = document.querySelector('.hour-hand');
 const secondHand2 = document.querySelector('.second-hand-2');
 const minsHand2 = document.querySelector('.min-hand-2');
 const hourHand2 = document.querySelector('.hour-hand-2');
-    
+
+const holidayElementFR = document.getElementById('holiday-fr');
+const holidayElementENG = document.getElementById('holiday-eng');
+
 function setRealTime() {
     /*
         *Called on page load then every 1000 milliseconds*
@@ -151,7 +154,8 @@ function changeRealTimeLabels(now, hour) {
 
     //Declare necessary variables
     //year
-    let currYear = now.getUTCFullYear;
+    let currYear = now.getUTCFullYear();
+    console.log(currYear);
     //weekday
     let currWeekdayNumber = now.getUTCDay();
     let weekdayFR = document.getElementById("weekday-modern-fr");
@@ -180,6 +184,8 @@ function changeRealTimeLabels(now, hour) {
     else {
         isLeapYear = false;
     }
+
+    console.log(isLeapYear)
 
     // IS IT END OF MONTH ?? TIMEZONE DANGER ZONE: CONVERTING UTC TO PARIS
     let endOfMonth = false;
@@ -688,6 +694,98 @@ function changeRevolutionLabels(currDayNumber, currMonthNumber, currYear, isLeap
 }
 
 function specialLabel(currDayNumber, currMonthNumber, currYear, isLeapYear) {
+    
+    console.log(currDayNumber);
+    /*
+        The last 5 or 6 days of the French Republican calendar year are holidays/festivals. These days do not fall into the regular 30 day months. 
+        On these rare occasions, update the clock to display the name of the special day instead of the month/day/weekday. 
+    */
+
+    //HTML elements
+    let revWeekdayElementFR = document.getElementById("weekday-past-fr");
+    let revWeekdayElementENG = document.getElementById("weekday-past-eng");
+    let revDayElementFR = document.getElementById("day-past-fr");
+    let revDayElementENG = document.getElementById("day-past-eng");
+    let revMonthElementFR = document.getElementById("month-past-fr");
+    let revMonthElementENG = document.getElementById("month-past-eng");
+
+    //setting HTML BLANKS
+    revWeekdayElementFR.innerHTML = '';
+    revWeekdayElementENG.innerHTML = '';
+    revDayElementFR.innerHTML = '';
+    revDayElementENG.innerHTML = '';
+    revMonthElementFR.innerHTML = '';
+    revMonthElementENG.innerHTML = '';
+
+    let holidayENG;
+    let holidayFR;
+    
+    if(isLeapYear == true)
+    {
+        if(currDayNumber == 22)
+        {
+            holidayFR = 'La Fete de la Revolution';
+            holidayENG = 'Celebration of the Revolution';
+        }
+        else if(currDayNumber == 21)
+        {
+            holidayFR = 'La Fete des Recompenses';
+            holidayENG = 'Celebration of Honors';
+        }
+        else if (currDayNumber == 20)
+        {
+            holidayFR = 'La Fete de l\'Opinion';
+            holidayENG = 'Celebration of Convictions';
+        }
+        else if(currDayNumber == 19)
+        {
+            holidayFR = 'La Fete du Travail';
+            holidayENG = 'Celebration of Labor';
+        }
+        else if(currDayNumber == 18)
+        {
+            holidayFR = 'La Fete du Genie';
+            holidayENG = 'Celebration of Talent';
+        }
+        else if(currDayNumber == 17)
+        {
+            holidayFR = 'La Fete de la Vertu';
+            holidayENG = 'Celebration of Virtue';
+        }
+    }
+    else
+    {
+        if(currDayNumber == 22)
+        {
+            holidayFR = 'La Fete des Recompenses';
+            holidayENG = 'Celebration of Honors';
+        }
+        else if(currDayNumber == 21)
+        {
+            holidayFR = 'La Fete de l\'Opinion';
+            holidayENG = 'Celebration of Convictions';
+        }
+        else if (currDayNumber == 20)
+        {
+            holidayFR = 'La Fete du Travail';
+            holidayENG = 'Celebration of Labor';
+        }
+        else if(currDayNumber == 19)
+        {
+            holidayFR = 'La Fete du Genie';
+            holidayENG = 'Celebration of Talent';
+        }
+        else if(currDayNumber == 18)
+        {
+            holidayFR = 'La Fete de la Vertu';
+            holidayENG = 'Celebration of Virtue';
+        }
+    }
+
+    //setting HTML
+    holidayElementENG.innerHTML = holidayENG;
+    holidayElementFR.innerHTML = holidayFR;
+
 
 }
 
