@@ -547,3 +547,32 @@ html {
 .holiday {
   color: brown;
 }
+
+/*#region essay*/
+
+.pagebreak {
+  height:3px;
+  border-width:0;
+  color: #591E27;
+  background-color: #591E27;
+  width: 90%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.essay {
+  font-family: "Open Sans", sans-serif;
+}
+
+.essay p {
+  text-align: left;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.essay h3 {
+  color: #591E27;
+}
+
+
+/*#endregion*/
