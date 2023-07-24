@@ -591,8 +591,6 @@ td {
 
 table {
   margin: auto;
-  width: 70%;
-  min-width: 800px;
   font-size: 16px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -600,8 +598,22 @@ table {
 
 .weekday-table {
   width: 500px;
-  min-width: 300px;
 }
 
+.month-table {
+  width: 900px;
+}
+
+.season {
+  background-color: #B79C87;
+}
+
+.table-header {
+  background-color: #936B62;
+}
+
+.holiday-table {
+  width: 600px;
+}
 
 /*#endregion*/
